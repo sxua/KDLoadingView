@@ -71,7 +71,7 @@ class KDLoadingViewTests: XCTestCase {
         }
         
         XCTAssertEqual(animationGroup.duration, CFTimeInterval(duration))
-        XCTAssertEqual(animationGroup.fillMode, kCAFillModeBoth)
+        XCTAssertEqual(animationGroup.fillMode, CAMediaTimingFillMode.both)
         XCTAssertEqual(animationGroup.isRemovedOnCompletion, false)
         XCTAssertEqual(animationGroup.repeatCount, Float.infinity)
         
@@ -99,7 +99,7 @@ class KDLoadingViewTests: XCTestCase {
         XCTAssertEqual(strokeEndAnimation.duration, CFTimeInterval(duration/2.0))
         XCTAssertEqual(strokeEndAnimation.fromValue as? Int, 0)
         XCTAssertEqual(strokeEndAnimation.toValue as? Int, 1)
-        XCTAssertEqual(strokeEndAnimation.timingFunction, CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
+        XCTAssertEqual(strokeEndAnimation.timingFunction, CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))
         
     }
     
@@ -125,7 +125,7 @@ class KDLoadingViewTests: XCTestCase {
         XCTAssertEqual(strokeStartAnimation.duration, CFTimeInterval(duration/2.0))
         XCTAssertEqual(strokeStartAnimation.fromValue as? Int, 0)
         XCTAssertEqual(strokeStartAnimation.toValue as? Int, 1)
-        XCTAssertEqual(strokeStartAnimation.timingFunction, CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
+        XCTAssertEqual(strokeStartAnimation.timingFunction, CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))
         
     }
     
@@ -149,7 +149,7 @@ class KDLoadingViewTests: XCTestCase {
         XCTAssertEqual(rotationAnimation.keyPath, "transform.rotation.z")
         XCTAssertEqual(rotationAnimation.fromValue as? Int, 0)
         XCTAssertEqual(rotationAnimation.toValue as? CGFloat, CGFloat(M_PI * 2.0))
-        XCTAssertEqual(rotationAnimation.timingFunction, CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear))
+        XCTAssertEqual(rotationAnimation.timingFunction, CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear))
         XCTAssertEqual(rotationAnimation.repeatCount, Float.infinity)
         
     }
